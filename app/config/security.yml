@@ -1,0 +1,35 @@
+jms_security_extra:
+    secure_all_services: false
+    expressions: true
+
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+    acl:
+        connection: default
+
+    providers:
+        my_fos_twitter_provider:
+            id: my.twitter.user 
+
+    firewalls:
+        public:
+            pattern:   /.*
+            fos_twitter:
+                login_path: /login
+                check_path: /login_check
+                default_target_path: /
+                provider: my_fos_twitter_provider
+            anonymous: ~
+            logout:     
+                handlers: [ bestbadtweets.twitter.logout.handler ]
+    access_control:
+        - { path: ^/secured$, role: [IS_AUTHENTICATED_FULLY] }
+        - { path: ^/secured/.*, role: [IS_AUTHENTICATED_FULLY] }
+        - { path: ^/suggestions, roles: ROLE_ADMIN }
+        - { path: ^/jobqueue, roles: ROLE_SUPER_ADMIN }
+        - { path: /.*, role: [IS_AUTHENTICATED_ANONYMOUSLY] }
+    role_hierarchy:
+        ROLE_TWITTER:      ROLE_USER
+        ROLE_ADMIN:        ROLE_USER
+        ROLE_SUPER_ADMIN:  ROLE_ADMIN

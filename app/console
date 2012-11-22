@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+umask(0000);
+
+set_time_limit(0);
+
+require_once __DIR__.'/bootstrap.php.cache';
+require_once __DIR__.'/AppKernel.php';
+
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+$input = new ArgvInput();
+
+// Enforce ZF APPLICATION_ENV convention
+if (! defined('APPLICATION_ENV')) {
+    $default = 'production';
+
+    // Use existing APPLICATION_ENV or default
+    define('APPLICATION_ENV', getenv('APPLICATION_ENV') ?: $default);
+}
+
+// Convert application environment to Symfony-friendly version
+if (!$env = $input->getParameterOption(array('--env', '-e'))) {
+    $env = (APPLICATION_ENV === 'testing'     ? 'test'
+         : (APPLICATION_ENV === 'development' ? 'dev'
+         : 'prod'));
+}
+$debug = getenv('SYMFONY_DEBUG') !== '0' && !$input->hasParameterOption(array('--no-debug', '')) && $env !== 'prod';
+
+$kernel = new AppKernel($env, $debug);
+$application = new Application($kernel);
+$application->run($input);

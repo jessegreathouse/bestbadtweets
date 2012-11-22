@@ -1,0 +1,32 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    router:   { resource: "%kernel.root_dir%/config/routing_dev.yml" }
+    profiler: { only_exceptions: false }
+
+web_profiler:
+    toolbar: true
+    intercept_redirects: false
+
+monolog:
+    handlers:
+        main:
+            type:  stream
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+        firephp:
+            type:  firephp
+            level: info
+
+assetic:
+    use_controller: true
+
+#swiftmailer:
+#    delivery_address: me@example.com
+
+fos_twitter:
+    file: %kernel.root_dir%/../vendor/kertz/twitteroauth/twitteroauth/twitteroauth.php
+    consumer_key: %bestbadtweets_twitter_consumer_key%
+    consumer_secret: %bestbadtweets_twitter_consumer_secret%
+    callback_url: http://dev.bestbadtweets.com/login_check
