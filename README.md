@@ -1,176 +1,23 @@
-Symfony Standard Edition
-========================
+# About bestbadtweets.com
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony2
-application that you can use as the skeleton for your new applications.
+bestbadtweets.com is a web application that aggregates the best of the worst tweets on Twitter. **This is not a Twitter website and is not affiliated with Twitter** or any other media company. Some tweets are nominated internally but also some nominations are suggested by the community.
 
-This document contains information on how to download, install, and start
-using Symfony. For a more detailed explanation, see the [Installation][1]
-chapter of the Symfony Documentation.
+This site was registered, designed and programmed by [@jessegreathouse][1], just another Twitter user. The idea of the site was conceived when Jesse read an article about the worst tweets. He realized that there was some humorous value in truly bad tweets, but in the context of a single article, there was no official recognition to these tweets other than the author randomly targeting a few arbitrary tweets. The idea of bestbadtweets.com is that the Twitter community can suggest and also vote on which are the best of the worst tweets on Twitter.
 
-1) Installing the Standard Edition
-----------------------------------
+## No malice intended 
 
-When it comes to installing the Symfony Standard Edition, you have the
-following options.
+The purpose of this site is not to insult, make-fun-of, or otherwise ridicule any of the participants or the tweeters involved. We like to focus on the tweet itself and not who is responsible for it. It is not meant to single out or hurt any individual. We all like to joke, laugh and have fun, and if a tweet of yours is nominated, please realize it is in the spirit of having fun and not being rude or hateful. Please consider it a compliment that someone got a laugh out of your tweet. You just brightened someones day
 
-### Use Composer (*recommended*)
+## Disclaimer 
 
-As Symfony uses [Composer][2] to manage its dependencies, the recommended way
-to create a new project is to use it.
+This site has no affiliation with Twitter or any media organization. This site was soley produced by a single person and is moderated by a very small amount of individuals. This site is meant to offer a fun service for indivduals who are fans of Twitter, but the site owner does not claim any official Twitter authority. This site follows and maintains it's rules according to the [official Twitter public API terms of use ][2], and any assets, features or use of Twitter content is within the rules outlined by Twitter. Any information, published on this site, is permitted under the Twitter API terms of use, but does not indicate or reflect the opinion of Twitter.
 
-If you don't have Composer yet, download it following the instructions on
-http://getcomposer.org/ or just run the following command:
+We do not keep public information about any Twitter users except what is available on their public profile. We do not keep most profile information in plain text, everything except Twitter id numbers, Twitter screen names, and tweet content text are encoded. Furthermore we do not ever receive nor keep the following items: email addresses, passwords, addresses, phone numbers. Any occurance of that information will only be found if it is incedentally published in a Twitter user profile or status message. We will not **EVER** distribute any user profile information to any third party (including that which is publicly available on a users profile). **We hate spammers** and we strongly feel like this world is better off without the nuisance of unsolicited communication from spammers. 
 
-    curl -s https://getcomposer.org/installer | php
+## Contact 
 
-Then, use the `create-project` command to generate a new Symfony application:
+If you have any questions or concerns about this website, use thereof, or would like to report abuse or infractions, please send an email to [webmaster@bestbadtweets.com][3].
 
-    php composer.phar create-project symfony/framework-standard-edition path/to/install 2.1.x-dev
-
-For an exact version, replace 2.1.x-dev with the latest Symfony version (e.g. 2.1.1).
-
-Composer will install Symfony and all its dependencies under the
-`path/to/install` directory.
-
-### Download an Archive File
-
-To quickly test Symfony, you can also download an [archive][3] of the Standard
-Edition and unpack it somewhere under your web server root directory.
-
-If you downloaded an archive "without vendors", you also need to install all
-the necessary dependencies. Download composer (see above) and run the
-following command:
-
-    php composer.phar install
-
-2) Checking your System Configuration
--------------------------------------
-
-Before starting coding, make sure that your local system is properly
-configured for Symfony.
-
-Execute the `check.php` script from the command line:
-
-    php app/check.php
-
-Access the `config.php` script from a browser:
-
-    http://localhost/path/to/symfony/app/web/config.php
-
-If you get any warnings or recommendations, fix them before moving on.
-
-3) Browsing the Demo Application
---------------------------------
-
-Congratulations! You're now ready to use Symfony.
-
-From the `config.php` page, click the "Bypass configuration and go to the
-Welcome page" link to load up your first Symfony page.
-
-You can also use a web-based configurator by clicking on the "Configure your
-Symfony Application online" link of the `config.php` page.
-
-To see a real-live Symfony page in action, access the following page:
-
-    web/app_dev.php/demo/hello/Fabien
-
-4) Getting started with Symfony
--------------------------------
-
-This distribution is meant to be the starting point for your Symfony
-applications, but it also contains some sample code that you can learn from
-and play with.
-
-A great way to start learning Symfony is via the [Quick Tour][4], which will
-take you through all the basic features of Symfony2.
-
-Once you're feeling good, you can move onto reading the official
-[Symfony2 book][5].
-
-A default bundle, `AcmeDemoBundle`, shows you Symfony2 in action. After
-playing with it, you can remove it by following these steps:
-
-  * delete the `src/Acme` directory;
-
-  * remove the routing entries referencing AcmeBundle in
-    `app/config/routing_dev.yml`;
-
-  * remove the AcmeBundle from the registered bundles in `app/AppKernel.php`;
-
-  * remove the `web/bundles/acmedemo` directory;
-
-  * remove the `security.providers`, `security.firewalls.login` and
-    `security.firewalls.secured_area` entries in the `security.yml` file or
-    tweak the security configuration to fit your needs.
-
-What's inside?
----------------
-
-The Symfony Standard Edition is configured with the following defaults:
-
-  * Twig is the only configured template engine;
-
-  * Doctrine ORM/DBAL is configured;
-
-  * Swiftmailer is configured;
-
-  * Annotations for everything are enabled.
-
-It comes pre-configured with the following bundles:
-
-  * **FrameworkBundle** - The core Symfony framework bundle
-
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
-
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * [**AsseticBundle**][12] - Adds support for Assetic, an asset processing
-    library
-
-  * [**JMSSecurityExtraBundle**][13] - Allows security to be added via
-    annotations
-
-  * [**JMSDiExtraBundle**][14] - Adds more powerful dependency injection
-    features
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][15] (in dev/test env) - Adds code generation
-    capabilities
-
-  * **AcmeDemoBundle** (in dev/test env) - A demo bundle with some example
-    code
-
-Enjoy!
-
-[1]:  http://symfony.com/doc/2.1/book/installation.html
-[2]:  http://getcomposer.org/
-[3]:  http://symfony.com/download
-[4]:  http://symfony.com/doc/2.1/quick_tour/the_big_picture.html
-[5]:  http://symfony.com/doc/2.1/index.html
-[6]:  http://symfony.com/doc/2.1/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  http://symfony.com/doc/2.1/book/doctrine.html
-[8]:  http://symfony.com/doc/2.1/book/templating.html
-[9]:  http://symfony.com/doc/2.1/book/security.html
-[10]: http://symfony.com/doc/2.1/cookbook/email.html
-[11]: http://symfony.com/doc/2.1/cookbook/logging/monolog.html
-[12]: http://symfony.com/doc/2.1/cookbook/assetic/asset_management.html
-[13]: http://jmsyst.com/bundles/JMSSecurityExtraBundle/master
-[14]: http://jmsyst.com/bundles/JMSDiExtraBundle/master
-[15]: http://symfony.com/doc/2.1/bundles/SensioGeneratorBundle/index.html
+[1]: http://twitter.com/#!/jessegreathouse "Jesse Greathouse"
+[2]: https://dev.twitter.com/terms/api-terms "Twitter API terms of use"
+[3]: mailto:webmaster@bestbadtweets.com "Email of Webmaster"
