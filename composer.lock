@@ -364,7 +364,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:jessegreathouse/BestbadtweetsBundle.git",
-                "reference": "adaf842c4ee713af1c69f0a40ec31719147cd1e1"
+                "reference": "6673695dacced541f860e02619c396b2f1ae38e4"
             },
             "dist": {
                 "type": "git",
