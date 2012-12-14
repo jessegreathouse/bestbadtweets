@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\TwitterBundle\FOSTwitterBundle(),
             new Jessegreathouse\Bundle\BestbadtweetsBundle\BestbadtweetsBundle(),
+            new Jessegreathouse\Bundle\YfrogBundle\YfrogBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

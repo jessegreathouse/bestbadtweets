@@ -6,7 +6,9 @@
             "": "src/",
             "FOS\\UserBundle": "vendor/FriendsOfSymfony/FOSUserBundle/",
             "FOS\\TwitterBundle": "vendor/FriendsOfSymfony/FOSTwitterBundle/",
-            "Jessegreathouse\\Bundle\\BestbadtweetsBundle": "vendor/jessegreathouse/BestbadtweetsBundle"
+            "Jessegreathouse\\Bundle\\YfrogBundle": "vendor/jessegreathouse/YfrogBundle",
+            "Jessegreathouse\\Bundle\\BestbadtweetsBundle": "vendor/jessegreathouse/BestbadtweetsBundle",
+            "Jessegreathouse\\Yfrog": "vendor/jessegreathouse/yfrogClient/src"
         }
     },
     "require": {
@@ -25,6 +27,8 @@
         "jms/di-extra-bundle": "1.1.*",
 
         "jessegreathouse/BestbadtweetsBundle": "dev-master",
+        "jessegreathouse/YfrogBundle": "dev-master",
+        "jessegreathouse/yfrogClient" : "dev-master",
         "kertz/twitteroauth": "dev-master",
         "FriendsOfSymfony/FOSUserBundle": "dev-master",
         "FriendsOfSymfony/FOSTwitterBundle": "dev-master"
@@ -43,7 +47,40 @@
                 "source": {
                     "type": "git",
                     "url": "git@github.com:jessegreathouse/BestbadtweetsBundle.git",
-                    "reference": "6673695dacced541f860e02619c396b2f1ae38e4"
+                    "reference": "fec7b2bdb6714ac9ab54e5358efe1cce1f81eca4"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jessegreathouse/YfrogBundle",
+                "version": "dev-master",
+                "target-dir": "Jessegreathouse/Bundle/YfrogBundle",
+                "dist": {
+                    "url": "git@github.com:jessegreathouse/YfrogBundle.git",
+                    "type": "git"
+                },
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:jessegreathouse/YfrogBundle.git",
+                    "reference": "eff96c202b01be007b2632f4a61a6bbea9f74801"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jessegreathouse/yfrogClient",
+                "version": "dev-master",
+                "dist": {
+                    "url": "git@github.com:jessegreathouse/yfrogClient.git",
+                    "type": "git"
+                },
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:jessegreathouse/yfrogClient.git",
+                    "reference": "4a0fb35a98f7d2982a5155b3578f243e71180470"
                 }
             }
         },
