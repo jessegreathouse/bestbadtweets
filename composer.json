@@ -47,7 +47,7 @@
                 "source": {
                     "type": "git",
                     "url": "git@github.com:jessegreathouse/BestbadtweetsBundle.git",
-                    "reference": "fec7b2bdb6714ac9ab54e5358efe1cce1f81eca4"
+                    "reference": "1e8141f56fcc83e6e50463df98264797257dd231"
                 }
             }
         },
